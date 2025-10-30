@@ -32,6 +32,8 @@ body {
       align-items: center;
       justify-content: space-between;
       padding: 0 60px;
+      position: relative;
+      z-index: 1000; /* Ensures the navbar is on top of everything */
     }
     
     .logo {
@@ -274,7 +276,7 @@ body {
   background-color: #000;
   min-width: 220px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  z-index: 10;
+
   border-radius: 4px;
   overflow: hidden;
   text-decoration: none;
@@ -283,6 +285,8 @@ body {
   visibility: hidden;
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
   transform: translateX(-17px)translateY(28px);
+
+  z-index: 2000; /* Makes dropdown menu appear above all other content */
 }
 
 /* When dropdown is active (clicked) */

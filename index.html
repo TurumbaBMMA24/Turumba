@@ -160,10 +160,11 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-        observer.unobserve(entry.target); // Animate only once
+      } else {
+        entry.target.classList.remove("visible");
       }
     });
-  }, { threshold: 0.2 }); // trigger when 20% of section is visible
+  }, { threshold: 0.4 }); // trigger when 20% of section is visible
 
   fadeSections.forEach(section => observer.observe(section));
 });
