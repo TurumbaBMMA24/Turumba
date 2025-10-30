@@ -376,10 +376,9 @@ body {
 /* Header text */
 .intro-heading {
   color: #fff;
-  font-family: "DM Sans";
   text-align: left;
   font-size: 55px;
-  font-weight: 500;
+  font-weight: 700;
   margin-left: 100px;
   margin-bottom: 10px;
   opacity: 0;

@@ -1198,3 +1198,14 @@ background-color:#CAA378 ;
   font-weight: 500;            /* medium weight for readability */
   transform: translateY(650px);
 }
+.play-btn {
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-left: 40px;
+}
+
+.play-btn:hover {
+  transform: scale(1.15);
+}
