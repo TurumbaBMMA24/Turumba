@@ -59,30 +59,30 @@
   <img src="WEBSITE PICS/1. Home/Hero Section/Layer 2.png" alt="People" class="people-image">
 </section>
 
-<section id="overview" class="origin-section">
+<section id="overview" class="origin-section fade-in-section">
   <div class="origin-container">
     <div class="origin-text">
-
       <h2>Pistang Biyatiko</h2>
       <p class="description1">
         The Pistang Biyatiko is a three-day highlight of the Turumba Festival in Pakil, drawing devotees from neighboring towns, particularly Quezon, who arrive from Monday to Wednesday to participate in the celebrations.
       </p>
-      </section>    
+    </div>
+  </div>
+</section>
 
-      <section class="video-section">
-        <div class="container">
-
-          <div class="video-wrapper">
-            <iframe 
-              src="https://www.youtube.com/embed/QowT4vJFHok" 
-              title="YouTube video"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-          </div>
-        </div>
-      </section>
+<section class="video-section fade-in-section">
+  <div class="container">
+    <div class="video-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/QowT4vJFHok" 
+        title="YouTube video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
 
 
     
@@ -153,6 +153,20 @@ window.addEventListener("scroll", () => {
   bg.style.transform = `scale(${scale})`;
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const fadeSections = document.querySelectorAll(".fade-in-section");
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target); // Animate only once
+      }
+    });
+  }, { threshold: 0.2 }); // trigger when 20% of section is visible
+
+  fadeSections.forEach(section => observer.observe(section));
+});
       </script>
 </body>
 </html>

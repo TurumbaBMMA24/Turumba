@@ -20,7 +20,9 @@
       font-family: "DM Sans", sans-serif;
     }
     
-
+body {
+  background-color: #000;
+}
     
     .navbar {
       width: 100%;
@@ -510,3 +512,15 @@
   border: none;
 }
   
+/* --- Scroll Fade-In Animation --- */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
