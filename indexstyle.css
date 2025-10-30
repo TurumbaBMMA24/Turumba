@@ -763,7 +763,7 @@ margin-bottom: 10px;
   background: #CAA378;
   color: #fff;
   padding: 80px 100px;
-  transform: translateY(50px);
+
 }
 
 .history-containerd {
@@ -918,3 +918,42 @@ margin-bottom: 10px;
     display: none;
   }
   
+  .turumba-quote {
+    position: relative;
+    width: 100%;
+    min-height: 776.25px;
+    background-image: url("WEBSITE PICS/1. Home/Awit sa Turumba/Frame 527 (1).png"); /* your uploaded image */
+    background-size: cover;
+    background-position: center;
+  
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    overflow: hidden;
+  }
+  
+
+  
+
+  
+  .quote-content {
+    font-family: "DM Sans", sans-serif;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 1%;
+  }
+  
+  .quote-text {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.6;
+
+    text-align: left;
+  }
+  
+  .quote-author {
+    font-size: 30.76px;
+    opacity: 0.9;
+    text-align: right;
+  }
