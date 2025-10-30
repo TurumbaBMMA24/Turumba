@@ -1,0 +1,45 @@
+.a {
+    background-color: aqua;
+}
+
+.carousel {
+    width:100%;
+    overflow-x: auto;
+    margin:3em auto;
+    display: flex;
+    gap: 1em;
+    scroll-behavior: smooth;
+  }
+  
+  .carousel::-webkit-scrollbar{
+    display: none;
+  }
+  
+  .card {
+    flex: 0 0 20em;
+    height: 12em;
+    background-color: var(--primary-color);
+    padding:1em;
+    border-radius: .5em;
+    text-align: center;
+    align-content: center;
+  }
+  
+  .carousel::scroll-button(right), .carousel::scroll-button(left) {
+    content: '>';
+    border: none;
+    background-color: var(--brand-color);
+
+    font-size: 3rem;
+    color: rgb(0, 0, 0);
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    padding-bottom: 1em;
+    cursor: pointer;
+    }
+    
+    .carousel::scroll-button(left){
+        content: '<';
+    }
+    

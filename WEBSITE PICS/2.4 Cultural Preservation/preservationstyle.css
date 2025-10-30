@@ -1,0 +1,496 @@
+@font-face {
+    font-family: "DM Sans";
+    src: url("../../Font/DMSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "DM Sans";
+    src: url("../../Font/DMSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "DM Sans", sans-serif;
+    }
+    
+    /* Header/Navbar */
+    body {
+      background-color: #000; /* black background */
+    }
+    
+    .navbar {
+      width: 100%;
+      height: 80px;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: left;
+      gap: 10px;
+    }
+    
+    .logo img {
+      height: 38.5px;
+      border-radius: 4px;
+    }
+  
+  
+    
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 40px;
+    }
+    
+    .nav-links a {
+      position: relative;
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 2px;
+      background-color: #ffffff;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+    
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+    
+    .btn-get-started {
+      background-color: #0b64a0;
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+    
+    .btn-get-started:hover {
+      background-color: #0d7bc5;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 15px;
+        height: auto;
+        padding: 15px 20px;
+      }
+      
+      .navbar-right {
+        flex-direction: column;
+        gap: 15px;
+      }
+    
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+    
+      .btn-get-started {
+        padding: 8px 18px;
+      }
+    }
+    
+    /* HERO */
+    .hero {
+      background: #c79f78; /* tan color fallback */
+      height: 547px;                /* visible height like screenshot */
+      min-height: 320px;
+      position: relative;
+      overflow: hidden;             /* Hide overflow for zoom effect */
+      display: flex;
+      align-items: center;        /* align to bottom */
+    }
+    
+    /* Background image layer that will zoom */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('2.4 Cultural Preservation Banner.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: transform 0.3s ease;
+      z-index: 1;
+    }
+    
+    .hero:hover::before {
+      transform: scale(1.05);       /* Zoom in effect on hover */
+    }
+    
+    .hero-inner {
+      width: calc(100% - 360px);    /* leave space on the right so hero content aligns left like screenshot */
+      max-width: 1200px;
+      padding: 48px 8% 80px 8%;     /* more padding at bottom */
+      position: relative;
+      z-index: 2;                   /* Ensure text stays above background image */
+    }
+    
+    /* breadcrumb small */
+    .breadcrumb {
+      color: rgba(255,255,255,0.85);
+      font-size: 13px;
+      margin-bottom: 14px;
+      letter-spacing: 0.6px;
+    }
+    .breadcrumb a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .breadcrumb .sep { margin: 0 8px; color: rgba(255,255,255,0.6); }
+    
+    /* main big title */
+    .hero-title {
+      color: #fff;
+      font-size: 56px;
+      line-height: 1;
+      font-weight: 700;
+      text-shadow: 0 10px 18px rgba(0,0,0,0.25), 0 4px 6px rgba(0,0,0,0.12);
+      margin-top: 8px;
+      max-width: 900px;
+    }
+    
+    /* RIGHT PANEL (blue vertical bar) */
+    /* This is positioned absolutely so it overlaps hero and content like in the image */
+    
+    .right-panel {
+      position: absolute;
+      right: 0;
+      top: 80px;
+      width: 260px;
+      height: calc(677px - 80px);
+      background: #005284;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; /* 👈 pushes content to bottom */
+      align-items: flex-start;
+      padding: 60px 28px;
+      z-index: 5;
+      box-shadow: -6px 0 12px rgba(0,0,0,0.06);
+    }
+    
+    /* Title inside right panel */
+    .right-panel h2 {
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.95);
+    }
+    
+    /* list of links */
+    .panel-list { list-style: none; width: 100%; margin-top: 10px; }
+    .panel-list li { margin-bottom: 18px; width: 100%; }
+    .panel-list a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: rgba(255,255,255,0.95);
+      text-decoration: none;
+      font-size: 15px;
+      line-height: 1;
+      width: 100%;
+      padding-right: 6px;
+    }
+    .panel-list a:hover { opacity: 0.9; }
+    
+    /* small chevron aligned right */
+    .chev {
+      color: rgba(255,255,255,0.85);
+      font-size: 14px;
+      margin-left: 10px;
+    }
+    
+   /* GENERAL */
+  body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      color: #1a1a1a;
+    }
+   /* FOOTER STYLES */
+   .footer {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 60px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    margin-left: 140px;
+    margin-right: 140px;
+  }
+  
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo {
+
+    height: 38.5px;
+  }
+  
+  .brand-name {
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    font-weight: 600;
+  }
+  
+  /* Footer navigation links */
+  .footer-nav a {
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+  
+  /* Underline animation */
+  .footer-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-nav a:hover {
+    color: #ffffff;
+  }
+  
+  .footer-nav a:hover::after {
+    transform: scaleX(1);
+  }
+  
+  /* Footer social icons */
+  .footer-socials {
+    display: flex;
+    gap: 12px; /* space between icons */
+    align-items: center;
+  }
+  
+  .footer-socials a {
+    display: inline-block;
+    background-color: transparent; /* no background box */
+    border-radius: 6px;
+    padding: 6px; /* space around icons */
+    text-decoration: none;
+  }
+  
+  .footer-socials img {
+    width: 30px;  /* adjust size of the icon */
+    height: 30px;
+    object-fit: contain;
+    filter: none; /* keep the original color */
+    transition: none; /* disable any animation */
+    cursor: default; /* no pointer change */
+  }
+
+
+
+  /* Divider */
+  hr {
+    border: none;
+    border-top: 1px solid #00374e;
+    width: 85%;
+    margin: 20px auto;
+  }
+  
+  /* Copyright text */
+  .copyright {
+    font-size: 0.9rem;
+    color: #ccc;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+
+/* Dropdown button (styled like other links) */
+.dropbtn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+
+
+
+
+/* Dropdown content (hidden by default, with transition) */
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 10;
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  /* Animation properties */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  transform: translateX(-17px)translateY(28px);
+}
+
+/* When dropdown is active (clicked) */
+.dropdown.active .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transform: translateX(-17px)translateY(28px);
+  text-decoration: none;
+}
+
+/* Dropdown items */
+.dropdown-content a {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none; /* remove underline */
+  border: none;          /* remove any border */
+  display: block;
+  transition: background 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #005284;
+  text-decoration: none; /* no underline on hover */
+  border: none;          /* ensure no border underline */
+}
+  
+
+/* ORIGIN SECTION */
+.origin-section {
+  background: #fff;
+  padding: 80px 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.origin-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.origin-text {
+  flex: 1;
+}
+
+.section-label1 {
+  font-size: 18px;
+  color: #5A90BF;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.section-label2 {
+  font-size: 18px;
+  color: #5A90BF;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.origin-text h2 {
+  font-size: 32px;
+  color: #0063A0;
+  margin-bottom: 20px;
+}
+
+.description1 {
+  color: #aeaeae;
+  line-height: 32.4px;
+  margin-bottom: 16px;
+}
+
+.description2 {
+  color: #aeaeae;
+  line-height: 32.4px;
+  margin-bottom: 16px;
+  margin-left: 20px;
+}
+.description3 {
+  font-size: 16px;
+  color: #5A90BF;
+  line-height: 32.4px;
+  margin-bottom: 16px;
+  margin-left: 80px;
+  margin-right: 300px;
+}
