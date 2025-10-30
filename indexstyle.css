@@ -20,10 +20,7 @@
       font-family: "DM Sans", sans-serif;
     }
     
-    /* Header/Navbar */
-    body {
-      background-color: #000; /* black background */
-    }
+
     
     .navbar {
       width: 100%;
@@ -314,19 +311,19 @@
 
 /* --- Navbar entry animation --- */
 .navbar {
-  animation: slideDown 0.9s ease-out forwards;
-  transform: translateY(-100px);
-  opacity: 0;
+  animation: slideDown 0.8s ease-out forwards;
+
+  opacity: 1;
 }
 
 /* Animation keyframes */
 @keyframes slideDown {
   from {
-    transform: translateY(-100px);
-    opacity: 0;
+    transform: translateY(-110vh);
+    opacity: 1;
   }
   to {
-    transform: translateY(0);
+    transform: translateY(-100vh);
     opacity: 1;
   }
 }
@@ -337,10 +334,10 @@
   width: 100%;
   height: 100vh; /* Full-screen section */
   overflow: hidden;
-  background-color: #000;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: flex-end;
 }
 
@@ -348,7 +345,7 @@
 .image-container {
   position: relative;
   width: 100%;
-  height: 80%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -358,61 +355,158 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.2);
-  animation: zoomOut 2.5s ease-out forwards;
+
+  animation: zoomOut 1.2s ease-out forwards;
 }
 
 /* Foreground people image (second layer) */
 .people-image {
   position: absolute;
-  bottom: -80px; /* start lower */
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: -150px;
   width: 100%;
-  opacity: 0;
-  animation: slideUp 2.3s ease-out 0.5s forwards;
+  animation: slideUp 1.2s ease-out forwards;
 }
 
 /* Header text */
 .intro-heading {
   color: #fff;
-  font-size: 3rem;
-  font-weight: 700;
+  font-family: "DM Sans";
   text-align: left;
+  font-size: 55px;
+  font-weight: 500;
+  margin-left: 100px;
   margin-bottom: 10px;
   opacity: 0;
-  transform: translateY(-500px);
-  animation: fadeDown 1s ease-out 1.5s forwards;
+  animation: fadeDown 1.2s ease-out forwards;
+}
+
+.intro-heading2 {
+  color: #fff;
+  font-family: "DM Sans";
+  text-align: left;
+  font-size: 17.5px;
+  font-weight: 500;
+  margin-left: 110px;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeDown 1.2s ease-out forwards;
 }
 
 /* --- Animations --- */
 @keyframes zoomOut {
   0% {
-    transform: scale(1.2);
+    transform: scale(2) translateX(-50px) translateY(-110px);
   }
   100% {
-    transform: scale(1);
+    transform: scale(1)translateX(0) translateY(0);
   }
 }
 
 @keyframes slideUp {
   0% {
-    bottom: -80px;
-    opacity: 0;
+    bottom: -150px;
+
   }
   100% {
-    bottom: 0;
-    opacity: 1;
+    bottom: -100px;
+
   }
 }
 
 @keyframes fadeDown {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-380px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-310px);
   }
 }
+
+/* ORIGIN SECTION */
+.origin-section {
+  background: #000000;
+  padding: 80px 100px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.origin-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.origin-text {
+  flex: 1;
+  
+}
+
+.section-label1 {
+  font-size: 14px;
+  color: #0063A0;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.origin-text h2 {
+  font-size: 32px;
+  color: #0063A0;
+  margin-bottom: 20px;
+}
+
+.description1 {
+  color: #AEAEAE;
+  line-height: 32.4px;
+  margin-bottom: 16px;
+}
+
+.description2 {
+  color: #AEAEAE;
+  line-height: 32.4px;
+  margin-bottom: 16px;
+  margin-left: 20px;
+}
+.description3 {
+  font-size: 16px;
+  color: #5A90BF;
+  line-height: 32.4px;
+  margin-bottom: 16px;
+  margin-left: 80px;
+  margin-right: 300px;
+}
+
+.video-section {
+  padding: 80px 20px;
+  background:#000000;
+  text-align: center;
+}
+
+.video-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9; /* Keeps the correct video proportions */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+  

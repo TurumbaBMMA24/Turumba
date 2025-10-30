@@ -8,6 +8,16 @@
   <link rel="icon" type="png" href="WEBSITE PICS/TurumbaLogo.png"">
 </head>
 <body>
+  <section class="intro-section">
+    <div class="image-container">
+      
+   
+    </div>
+    <img src="WEBSITE PICS/1. Home/Hero Section/Background.png" alt="Background" class="bg-image">
+    <h1 class="intro-heading">TURUMBA EXPERIENCE</h1>
+    <h1 class="intro-heading2">Discover the largest and longest religious celebration of Pakil, Laguna</h1>
+  </section>
+  
   <header class="navbar">
     <div class="logo">
         <a href="index.html">
@@ -45,16 +55,34 @@
     </div>
   </header>
   
-  <section class="intro-section">
-    <div class="image-container">
-      <img src="WEBSITE PICS/1. Home/Hero Section/Background.png" alt="Background" class="bg-image">
-      <img src="WEBSITE PICS/1. Home/Hero Section/Layer 2.png" alt="People" class="people-image">
-    </div>
-    <h1 class="intro-heading">TURUMBA EXPERIENCE</h1>
-    <h1 class="intro-heading">Discover the largest and longest religious celebration of Pakil, Laguna</h1>
-  </section>
+<section>
+  <img src="WEBSITE PICS/1. Home/Hero Section/Layer 2.png" alt="People" class="people-image">
+</section>
 
+<section id="overview" class="origin-section">
+  <div class="origin-container">
+    <div class="origin-text">
 
+      <h2>Pistang Biyatiko</h2>
+      <p class="description1">
+        The Pistang Biyatiko is a three-day highlight of the Turumba Festival in Pakil, drawing devotees from neighboring towns, particularly Quezon, who arrive from Monday to Wednesday to participate in the celebrations.
+      </p>
+      </section>    
+
+      <section class="video-section">
+        <div class="container">
+
+          <div class="video-wrapper">
+            <iframe 
+              src="https://www.youtube.com/embed/QowT4vJFHok" 
+              title="YouTube video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </section>
 
 
     
@@ -108,6 +136,23 @@
         document.addEventListener('click', () => {
           document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
         });
+
+      
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  const bg = document.querySelector("WEBSITE PICS/1. Home/Hero Section/Background.png");
+
+  // Limit zoom range (adjust to taste)
+  const maxScale = 2.2;
+  const minScale = 1.0;
+
+  // Calculate zoom factor based on scroll position
+  let scale = minScale + (scrollY / 1000); 
+  if (scale > maxScale) scale = maxScale;
+
+  bg.style.transform = `scale(${scale})`;
+});
+
       </script>
 </body>
 </html>
