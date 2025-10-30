@@ -433,7 +433,7 @@ body {
 /* ORIGIN SECTION */
 .origin-section {
   background: #000000;
-  padding: 80px 100px;
+  padding: 80px 100px 80px 100px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -488,7 +488,7 @@ body {
 }
 
 .video-section {
-  padding: 80px 20px;
+  padding: 10px 20px 80px 20px;
   background:#000000;
   text-align: center;
 }
@@ -527,4 +527,234 @@ body {
 .fade-in-section.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* HISTORY SECTION */
+.history-section {
+  background: #0b5a85;
+  color: #fff;
+  padding: 80px 100px 100px 100px;
+}
+
+.history-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HISTORY HEADER FIX */
+.history-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 40px 0;
+color: #fff;
+gap: 30px;
+flex-wrap: nowrap; /* prevent wrapping */
+}
+
+.history-left {
+flex: 1;
+}
+
+/* Align title and line together */
+.history-title-line {
+display: flex;
+align-items: center;
+gap: 20px;
+width: 100%;
+margin-bottom: 10px;
+}
+.historyh1 h1 {
+  font-size: 16px;
+}
+
+.history-title-line h2 {
+  font-size: 55px;
+  white-space: nowrap;
+}
+/* Extend the line toward “View All” */
+.history-title-line .line {
+  flex: 1;
+  height: 2px;
+  background-color: #ffffff;
+  opacity: 0.8;
+  transform: translateY(15px); /* moves the line slightly down */
+  width: 670px;
+}
+
+
+/* “View All” aligned perfectly right */
+.view-all {
+color: #fff;
+text-decoration: none;
+font-weight: 500;
+border-bottom: 2px solid #ffffff;
+padding-bottom: 2px;
+white-space: nowrap; /* ✅ prevents breaking into multiple lines */
+transition: all 0.3s ease;
+transform: translateX(-110px) translateY(60px);
+}
+.origin-images2 {
+display: flex;
+justify-content: center; /* centers them horizontally */
+align-items: center;
+gap: 16px;
+flex-wrap: nowrap; /* keeps them in one row */
+position: relative;
+height: 279px;
+}
+
+.origin-images2 .img-box {
+position: relative;
+overflow: hidden;
+border-radius: 10px;
+cursor: pointer;
+flex: 1; /* makes all images equal width */
+max-width: 33.33%; /* ensures 3 equal images */
+height: 100%;
+}
+
+.origin-images2 .img-box img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+position: absolute;
+top: 0;
+left: 0;
+transition: opacity 0.3s ease;
+}
+
+/* Black & white visible by default */
+.origin-images2 .img-box img:first-child {
+opacity: 1;
+z-index: 1;
+}
+
+/* Color image hidden, slightly zoomed in */
+.origin-images2 .img-box img:last-child {
+opacity: 0;
+transform: scale(1.1);
+z-index: 2;
+}
+
+/* Hover: show color image (slightly zoomed in) */
+.origin-images2 .img-box:hover img:first-child {
+opacity: 0;
+}
+
+.origin-images2 .img-box:hover img:last-child {
+opacity: 1;
+}
+
+.img-caption1 {
+  position: absolute;
+bottom: 33%;
+  margin-left: 25px;
+  color: #fff;
+  font-size: 11.22px;
+  font-weight: 800;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+  z-index: 2;
+  text-align: center;
+  }
+
+.img-caption2 {
+  margin-left: 25px;
+position: absolute;
+bottom: 10%;
+color: #fff;
+font-size: 22px;
+font-weight: 800;
+text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+z-index: 2;
+text-align: left;
+}
+.img-caption3 {
+  margin-left: 25px;
+position: absolute;
+right: 10%;
+bottom: 10%;
+color: #fff;
+font-size: 22px;
+font-weight: 800;
+text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+z-index: 2;
+text-align: left;
+}
+
+.history-sectionb {
+  background: #fff;
+  color: #fff;
+  padding: 80px 100px 30px 100px;
+}
+
+.history-sectionc {
+  background: #fff;
+  color: #fff;
+  padding: 1px 100px 80px 100px;
+}
+
+.history-containerb {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HISTORY HEADER FIX */
+.history-headerb {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 40px 0;
+color: #fff;
+gap: 30px;
+flex-wrap: nowrap; /* prevent wrapping */
+}
+
+.history-leftb {
+flex: 1;
+}
+
+/* Align title and line together */
+.history-title-lineb {
+display: flex;
+align-items: center;
+gap: 20px;
+width: 1090px;
+margin-bottom: 10px;
+}
+.historyh1 h1 {
+  font-size: 16px;
+}
+
+.history-title-lineb h2 {
+  font-size: 55px;
+  white-space: nowrap;
+  color: #0063A0;
+}
+/* Extend the line toward “View All” */
+.history-title-lineb .lineb {
+  flex: 1;
+  height: 2px;
+  background-color: #0063A0;
+  opacity: 0.8;
+  transform: translateY(15px); /* moves the line slightly down */
+  width: 670px;
+}
+
+.map-wrap {
+  width: 100%;
+  max-width: 1000px;   /* optional max width */
+  margin: 0 auto;
+  aspect-ratio: 16 / 9; /* keeps the iframe proportional */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.map-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
