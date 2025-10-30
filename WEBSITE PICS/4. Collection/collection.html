@@ -340,27 +340,35 @@ the people of Pakil honor the Blessed Virgin and preserve their heritage.</p>
 
                                       <section class="music-section">
                                         <!-- Card 1 -->
-                                        <div class="card">
+                                        <div class="card" id="card1" style="background-image: url('paused.jpg');">
                                           <div class="card-gradient"></div>
                                           <div class="card-content">
                                             <p class="track-number">01</p>
                                             <div class="title-row">
                                               <h3>Awit sa Turumba</h3>
-                                              <img src="icon only (white).png" class="play-btn" data-audio="audio1" alt="Play">
+                                              <img src="icon only (white).png" class="play-btn" 
+                                                   data-audio="audio1" 
+                                                   data-card="card1" 
+                                                   data-gif="Awit ng Turumba.gif"
+                                                   alt="Play">
                                             </div>
                                             <p class="artist">Professor Julian Balita</p>
                                             <audio id="audio1" src="4.Collection (Awit ng Turumba).mp3"></audio>
                                           </div>
                                         </div>
-                                      
+                                    
                                         <!-- Card 2 -->
-                                        <div class="card">
+                                        <div class="card" id="card2" style="background-image: url('paused.jpg');">
                                           <div class="card-gradient"></div>
                                           <div class="card-content">
                                             <p class="track-number">02</p>
                                             <div class="title-row">
                                               <h3>Makisaya sa Pakil</h3>
-                                              <img src="icon only (white).png" class="play-btn" data-audio="audio2" alt="Play">
+                                              <img src="icon only (white).png" class="play-btn" 
+                                                   data-audio="audio2" 
+                                                   data-card="card2" 
+                                                   data-gif="Makisaya sa Pakil.gif"
+                                                   alt="Play">
                                             </div>
                                             <p class="artist">Dean Antonio Africa <br>(UST conservatory of Music)</p>
                                             <audio id="audio2" src="4. Collection (Makisaya sa Pakil).mp3"></audio>
@@ -439,20 +447,35 @@ the people of Pakil honor the Blessed Virgin and preserve their heritage.</p>
 buttons.forEach(btn => {
   btn.addEventListener('click', () => {
     const audioId = btn.dataset.audio;
+    const cardId = btn.dataset.card;
+    const gifFile = btn.dataset.gif; // 👈 each card’s unique GIF
     const audio = document.getElementById(audioId);
+    const card = document.getElementById(cardId);
 
     if (audio.paused) {
-      // Pause any other playing audio
+      // Pause all others first
       document.querySelectorAll('audio').forEach(a => a.pause());
-      document.querySelectorAll('.play-btn').forEach(b => b.src = 'icon only (black).png');
+      document.querySelectorAll('.play-btn').forEach(b => b.src = 'icon only (white).png');
+      document.querySelectorAll('.card').forEach(c => {
+        c.style.backgroundImage = "url('paused.jpg')";
+      });
 
-      // Play selected audio
+      // Play the selected audio
       audio.play();
       btn.src = 'icon only (white).png';
+      card.style.backgroundImage = `url('${gifFile}')`;
     } else {
+      // Pause current audio
       audio.pause();
       btn.src = 'icon only (black).png';
+      card.style.backgroundImage = "url('paused.jpg')";
     }
+
+    // When the song ends, reset visuals
+    audio.onended = () => {
+      btn.src = 'icon only (white).png';
+      card.style.backgroundImage = "url('paused.jpg')";
+    };
   });
 });
       </script>

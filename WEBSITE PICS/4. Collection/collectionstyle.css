@@ -817,7 +817,7 @@ background-color:#CAA378 ;
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 1px 40px 1px 40px;
+  padding: 40px;
   background-color: #CAA378;
 }
 
@@ -827,7 +827,8 @@ background-color:#CAA378 ;
   height: 400px;
   border-radius: 6px;
   overflow: hidden;
-  background: linear-gradient(to bottom, #5a98d0, #1a2a6c);
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: flex-end;
   color: white;
@@ -876,7 +877,7 @@ background-color:#CAA378 ;
   height: 26px;
   cursor: pointer;
   transition: transform 0.2s ease;
-  margin-left: 70px;
+  margin-left: 40px;
 }
 
 .play-btn:hover {
