@@ -758,3 +758,163 @@ margin-bottom: 10px;
   border: 0;
   display: block;
 }
+
+.history-sectiond {
+  background: #CAA378;
+  color: #fff;
+  padding: 80px 100px;
+  transform: translateY(50px);
+}
+
+.history-containerd {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HISTORY HEADER FIX */
+.history-headerd {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 40px 0;
+color: #fff;
+gap: 30px;
+flex-wrap: nowrap; /* prevent wrapping */
+}
+
+.history-leftd {
+flex: 1;
+}
+
+/* Align title and line together */
+.history-title-lined {
+display: flex;
+align-items: center;
+gap: 20px;
+width: 1090px;
+margin-bottom: 10px;
+}
+.historyh1d h1 {
+  font-size: 16px;
+}
+
+.history-title-lined h2 {
+  font-size: 55px;
+  white-space: nowrap;
+}
+/* Extend the line toward “View All” */
+.history-title-lined .lined {
+  flex: 1;
+  height: 2px;
+  background-color: #ffffff;
+  opacity: 0.8;
+  transform: translateY(15px); /* moves the line slightly down */
+  width: 670px;
+}
+
+.gallery-section1d {
+  background: #CAA378;
+}
+
+.overlayd {
+  position: fixed;           /* stays in place even when scrolling */
+  top: 0;
+  left: 0;
+  width: 100vw;              /* full width of the viewport */
+  height: 100vh;             /* full height of the viewport */
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  backdrop-filter: blur(3px); /* optional blur for aesthetic */
+  z-index: 999;              /* ensures it sits above other content */
+  display: none;             /* hidden by default */
+}
+
+.carouseld {
+  width:67%;
+  overflow-x: auto;
+  margin:auto;
+  display: flex;
+  gap: 1em;
+  scroll-behavior: smooth;
+  anchor-name: --carousel;
+  scroll-snap-type: x mandatory;
+}
+
+.carouseld::scroll-button(right), .carouseld::scroll-button(left) {
+  content: '>';
+  background: #6EA2DB;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: #fff;
+  font-size: 2rem;
+  font-family: "DM Sans";
+  cursor: pointer;
+  margin: 0 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: background 0.2s;
+  transform: translateX(1050px) translateY(-300px);
+  }
+
+  .carouseld::scroll-button(left){
+    content: '<';
+}
+
+.carouseld::-webkit-scrollbar{
+  display: none;
+}
+
+  .card {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    flex: 0 0 calc((100% / 3) - 20px); /* Always 3 cards visible */
+    height: 240px;
+    background-color:#CAA378 ;
+    padding: 1em;
+
+    align-content: center ;
+    display: flex;
+    gap: 40px;
+    overflow: hidden;
+    width: 19.79vw; /* 3 images x 350px */
+  
+  }
+  .card img {
+    width: 340px;
+    height: 240px;
+    object-fit: cover;
+    background: #fff;
+  }
+  @media (max-width: 1200px) {
+    .gallery-imagesd {
+      width: 90vw;
+    }
+    .gallery-sectiond {
+      width: 97vw;
+    }
+    .gallery-carouseld {
+      gap: 10px;
+    }
+    .gallery-imagesd img {
+      width: 90vw;
+      max-width: 19.79vw;
+      height: 180px;
+    }
+  }
+  @media (max-width: 1000px) {
+    .gallery-imagesd {
+      width: 95vw;
+      gap: 15px;
+    }
+    .gallery-btnd {
+      width: 40px;
+      height: 40px;
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Optional: hide scroll bar */
+  .gallery-imagesd::-webkit-scrollbar {
+    display: none;
+  }
+  

@@ -894,7 +894,7 @@ margin-bottom: 10px;
   .card {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    flex: 0 0 20em;
+    flex: 0 0 calc((100% / 3) - 20px); /* Always 3 cards visible */
     height: 240px;
     background-color:#CAA378 ;
     padding: 1em;

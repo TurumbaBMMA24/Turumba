@@ -546,7 +546,7 @@ margin-bottom: 10px;
   .card {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    flex: 0 0 15em;
+    flex: 0 0 calc((100% / 5) - 2px); /* Always 5 cards visible */
     padding: 1em;
     align-content: center ;
     display: flex;
@@ -1027,7 +1027,7 @@ margin-bottom: 10px;
   .cardz {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    flex: 0 0 20em;
+    flex: 0 0 calc((100% / 3) - 20px); /* Always 3 cards visible */
     height: 240px;
     background-color:#fff;
     padding: 1em;
