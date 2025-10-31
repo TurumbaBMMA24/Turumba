@@ -170,8 +170,14 @@ One version was written by Ananias B. Isorena, and the other was from Iñigo G. 
               <div class="desc">
                 <p class="index">02</p>
                 <h3>Iñigo G. Vito</h3>
+                <img src="audio blue.png" class="play-btn" 
+                data-audio="audio1" 
+                data-card="card1" 
+
+                alt="Play">
                 <p class="subtitle">Turumba sa Birhen Maria de los Dolores (1997)</p>
                 <p class="subtitle2">Another version of the legend where it explains that Turumba began in singing, dancing, and movement as acts of praise to the Virgin (Birhen) when the image—once heavy—became light after being lifted from the shore where it was found.
+                  <audio id="audio1" src="4.Collection (Awit ng Turumba).mp3"></audio>
                 </p>
                 <a href="#" class="btn-readmore1">Read More →</a>
                 </div>
@@ -179,7 +185,43 @@ One version was written by Ananias B. Isorena, and the other was from Iñigo G. 
           </div>
           </div>
           </section>
-
+          <section class="music-section">
+            <!-- Card 1 -->
+            <div class="card" id="card1" style="background-image: url('paused.jpg');">
+              <div class="card-gradient"></div>
+              <div class="card-content">
+                <p class="track-number">01</p>
+                <div class="title-row">
+                  <h3>Awit sa Turumba</h3>
+                  <img src="icon only (white).png" class="play-btn" 
+                       data-audio="audio1" 
+                       data-card="card1" 
+                       data-gif="awit-ng-turumba.gif"
+                       alt="Play">
+                </div>
+                <p class="artist">Professor Julian Balita</p>
+                <audio id="audio1" src="4.Collection (Awit ng Turumba).mp3"></audio>
+              </div>
+            </div>
+        
+            <!-- Card 2 -->
+            <div class="card" id="card2" style="background-image: url('paused.jpg');">
+              <div class="card-gradient"></div>
+              <div class="card-content">
+                <p class="track-number">02</p>
+                <div class="title-row">
+                  <h3>Makisaya sa Pakil</h3>
+                  <img src="icon only (white).png" class="play-btn" 
+                       data-audio="audio2" 
+                       data-card="card2" 
+                       data-gif="makisaya-sa-pakil.gif"
+                       alt="Play">
+                </div>
+                <p class="artist">Dean Antonio Africa <br>(UST conservatory of Music)</p>
+                <audio id="audio2" src="4. Collection (Makisaya sa Pakil).mp3"></audio>
+              </div>
+            </div>
+          </section>
               <section id="ritual" class="borigin-section">
       <div class="borigin-container">
         <div class="borigin-text">
@@ -405,6 +447,43 @@ One version was written by Ananias B. Isorena, and the other was from Iñigo G. 
         document.addEventListener('click', () => {
           document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
         });
+
+        const buttons = document.querySelectorAll('.play-btn');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const audioId = btn.dataset.audio;
+    const cardId = btn.dataset.card;
+    const gifFile = btn.dataset.gif; // 👈 each card’s unique GIF
+    const audio = document.getElementById(audioId);
+    const card = document.getElementById(cardId);
+
+    if (audio.paused) {
+      // Pause all others first
+      document.querySelectorAll('audio').forEach(a => a.pause());
+      document.querySelectorAll('.play-btn').forEach(b => b.src = 'icon only (white).png');
+      document.querySelectorAll('.card').forEach(c => {
+        c.style.backgroundImage = "url('paused.jpg')";
+      });
+
+      // Play the selected audio
+      audio.play();
+      btn.src = 'icon only (white).png';
+      card.style.backgroundImage = `url('${gifFile}')`;
+    } else {
+      // Pause current audio
+      audio.pause();
+      btn.src = 'icon only (black).png';
+      card.style.backgroundImage = "url('paused.jpg')";
+    }
+
+    // When the song ends, reset visuals
+    audio.onended = () => {
+      btn.src = 'icon only (white).png';
+      card.style.backgroundImage = "url('paused.jpg')";
+    };
+  });
+});
       </script>
 </body>
 </html>
