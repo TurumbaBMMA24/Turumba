@@ -153,7 +153,7 @@ One version was written by Ananias B. Isorena, and the other was from Iñigo G. 
                   <p class="subtitle2">The Turumba began when a group of women danced and sang after discovering the framed image of the Virgin (Birhen) by the seashore. It is said that their clapping and leaping movements made the frame easier to carry, which had initially been too heavy for them.
 
                   </p>
-                  <a href="#" class="btn-readmore1">Read More →</a>
+                  <a id="openOverlay" class="btn-readmore1">Read More →</a>
                 </div>
               </div>
             </div>
@@ -179,11 +179,45 @@ One version was written by Ananias B. Isorena, and the other was from Iñigo G. 
                 <p class="subtitle2">Another version of the legend where it explains that Turumba began in singing, dancing, and movement as acts of praise to the Virgin (Birhen) when the image—once heavy—became light after being lifted from the shore where it was found.
                   <audio id="audio1" src="4.Collection (Awit ng Turumba).mp3"></audio>
                 </p>
-                <a href="#" class="btn-readmore1">Read More →</a>
+                <button id="openOverlay" class="btn-readmore1">Read More →</button>
                 </div>
             </div>
           </div>
           </div>
+
+          <!-- Overlay -->
+<div id="overlay" class="overlay">
+  <div class="overlay-content">
+    <span id="closeOverlay" class="close">&times;</span>
+    <div class="text-content">
+      <p>Noong umaga ng Biyernes, ika-13 ng Setyembre taong 1788...</p>
+      <p>...</p>
+      <p>...</p>
+      Noong umaga ng Viernes, ika-13 ng Septiembre taong 1788, ang mga mangingisdang taga-Pakil sa look ng Laguna, na halos nag-uunahang makauwi dahil sa lumalakas na hihip ng hangin, ay, sa di inaasahan, ay nakita nila ang imahe ng Mahal na Virgen na nakalutang sa tubig at parang walang anumang sumasalunga sa lumalaking alon ng dagat ng Laguna. Sumaisip ng mga mangingisda na ito marahil ang imaheng nakita ng tagaibang bayan magdaragat na hindi nila makuha.
+
+Sa nais ng mga nakakita na sila ang makakuha, inilapit nila ang kanilang mga bangka sa Imahen, subalit pag kanilang dadamputin ay lumulubog sa tubig at hindi nila makita at kailangang maghintay sila nang matagal bago muling lumutang.
+
+Ganito nang ganito ang nangyayari sa mga mangingisda hanggang sa tumanghali at abutin sila ng gutom, kaya’t umahon sila na bigo ang kanilang nais na makuha ang Imahen, at ito ay nabalita sa buong bayan.
+
+Kinabukasan, araw ng Sabado. Ang Mahal na Imahen ay muling nakita ng mga lalaking mangingisda sa wawa ng ilog nitong Pakil na sumasalungat sa agos ng tubig. At gaya rin ng dati na ibig makuha, datapwat tulad din ng una ang nangyari, na lumulubog sa tubig kung kanilang dadamputin, hanggang sa lumubog ay hindi nila nakita.
+
+Linggo ng umaga, Septiembre 15. Hindi pa halos nagbubukang-liwayway ay nakita ng mga sakadorang¹⁸ babae na nakapatong ang Mahal na Imahen sa malapad na bato sa sadsaran ng mga bangka ng mangingisda. Sa gitna ng pagkamangha, dahil sa ang Mahal na Imahen ay hindi basa sa magdamag na ulan, ay kanilang dinampot, subalit hindi nila maalis sa batong kinapapatungan. Hindi napigil ng mga babae ang kanilang kagalakan kaya’t sila ay nagsipagsayaw, at ang isang may katandaa’y napasigaw ng “Turumba… turumba” at sumagot ang iba ng “Sa Virgen.” At sa anong himala ay nabuhat nila ang Mahal na Imahen. Sa lubos na katuwaan ng mga babae ay patuloy silang nagsasayaw at nagsi-awit hanggang sa maipasok sa simbahan ang Mahal na Imahen.
+
+Noon din ay ipinag-utos ni Don Juan de Francisco, na siyang Kapitan sa bayan ng Pakil, na maghalal ng mga taong mamamahala sa Mahal na Virgen, sapagkat iyan ay kapalaran ng Pakil at dapat maging pag-aari ng bayan ng Pakil habang panahon, at simula noon ay napatatag ang Fiesta Domingo de Dolor.¹⁹
+
+
+
+
+18  Sa diksiyonaryo ng wikang Espanyol, makikita ang ganitong pagpapakahulugan:
+          Sacador, ra [sah-cah-dorˈ, rah], m. & f. Extracter, exporter.           
+         Sacadura [sah-cah-dooˈ-rah]. f. A sloping cut, by which tailors make clothes fit better.
+   A New Pronouncing Dictionary of the Spanish and English Languages, s.v. “Sacador, ra,” “Sacadura,” 569. Sa Pakil, ang sakadora ay tumutukoy sa mga babaeng nagpupunta sa punduhan o estaka, para bumili ng isda.
+
+19  Isorena, A. B. (n.d.). Ang Birhen Nuestra Señora de los Dolores de Turumba sa Pakil, Laguna: Hango sa Matandang Kasulatan [Unpublished typescript, in the care of Iñigo Vito]. (Copy obtained through Respeto, J. C., 2024, “Ang Bayang Panitikan: Ang Pagtatanghal ng Kabanalan sa Pakil, Laguna, pp. 55–56). Quezon City: Ateneo de Manila University Press.
+
+    </div>
+  </div>
+</div>
           </section>
           
               <section id="ritual" class="borigin-section">
@@ -412,7 +446,19 @@ One version was written by Ananias B. Isorena, and the other was from Iñigo G. 
           document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
         });
 
+        const overlay = document.getElementById('overlay');
+const openBtn = document.getElementById('openOverlay');
+const closeBtn = document.getElementById('closeOverlay');
 
+openBtn.addEventListener('click', () => {
+  overlay.style.display = 'flex';
+  document.body.classList.add('no-scroll'); // prevent background scroll
+});
+
+closeBtn.addEventListener('click', () => {
+  overlay.style.display = 'none';
+  document.body.classList.remove('no-scroll');
+});
       </script>
 </body>
 </html>
