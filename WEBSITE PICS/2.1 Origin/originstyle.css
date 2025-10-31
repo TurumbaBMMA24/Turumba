@@ -1306,13 +1306,13 @@ background-color:#CAA378 ;
 
 /* Overlay content box */
 .overlay-content {
-  line-height: 24.4px;
+  line-height: 34.4px;
   color: #aeaeae;
   background-color: #fff;
   width: 80%;
   max-width: 900px;
   height: 80%;
-  padding: 20px;
+  padding: 40px;
   border-radius: 10px;
   position: relative;
   overflow-y: auto; /* make this scrollable */
